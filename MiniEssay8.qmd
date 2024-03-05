@@ -1,0 +1,34 @@
+---
+title: "What is Missing Data"
+output: 
+  pdf_document: 
+    bibliography: references.bib
+author: Julian Marrero
+date: March 05 2024
+format: docx
+editor: visual
+---
+
+## 
+
+In the realm of data analysis and research, missing data is a challenge that can significantly influence the outcome of studies and the robustness of statistical models. Missing data occurs when no data value is stored for an item or variable, which can lead to biased estimates, reduced statistical power, and potentially misleading conclusions (Little & Rubin, 2020). Understanding the nature of missing data, identifying its patterns, and implementing appropriate strategies to address it are critical steps in ensuring the integrity of any data-driven analysis.
+
+Missing data can arise in various contexts, such as surveys, clinical trials, or during data collection from electronic sources. The reasons behind missing data are manifold, including non-response by participants, errors in data entry, loss of data during transmission, or simply the omission of data collection for certain variables. The impact of missing data on analysis is not trivial; it can distort the representation of the underlying population, leading to skewed insights and decisions based on incomplete evidence.
+
+To effectively address missing data, it is essential first to understand its types, each with its implications for data analysis. The first type is **Missing Completely at Random (MCAR).** This is the probability of an observation being missing is the same for all observations. The missingness of data under MCAR is not related to the observed data or the missing data itself. This is the most benign form of missing data. The second type is **Missing at Random (MAR).** This is the probability of an observation being missing is related to some observed data but not to the value of the missing data itself. Under MAR, the missingness can be modeled using the information available in the dataset. The third type is **Missing Not at Random (MNAR).** This is the probability of an observation being missing is related to the reason it is missing, which may include the value of the missing data itself. MNAR is the most challenging form of missing data to handle, as it requires knowledge about the mechanism of missingness that is not available in the dataset (Little & Rubin, 2020).
+
+The approach to managing missing data depends on its type, the extent of missingness, and the goals of the analysis. There are deletion methods, imputation methods, and limitation methods. Listwise deletion, also known as complete case analysis, involves excluding cases with any missing values from the analysis. While simple, it can lead to significant data loss and biased results if the data is not MCAR (Little & Rubin, 2020). Pairwise deletion however, uses all available data by conducting analyses that require specific variables, thereby maximizing the use of available data. Furthermore, it can lead to inconsistencies due to different sample sizes used in various analyses.
+
+There are three main imputation methods: single imputation (Mean/Median/Mode Imputation), multiple imputations, and model-based imputation. For single imputation, missing values are filled in with the mean, median, or mode of the available data. This method is easy to implement but can underestimate variability and affect the data distribution. Multiple imputation **i**nvolves creating several complete datasets by imputing missing values based on a distribution and combining the results from each dataset (Rubin, 1987). It accounts for the uncertainty of the imputed values but is computationally intensive. Model-based imputationuses statistical models (e.g., regression models, machine learning algorithms) to predict and impute missing values based on other variables in the dataset. This approach can be more accurate but requires careful model selection and validation.
+
+Limitation minimization primarily comes in the form of sensitivity analysis or preventative measures. Conducting sensitivity analyses assists in understanding how variations in the assumptions about the missing data affect the study results. This approach helps in assessing the robustness of the conclusions. Designing the data collection process to minimize the occurrence of missing data, such as improving survey design, offering incentives for complete responses, and employing robust data management practices.
+
+When dealing with missing data, several best practices should be observed. We need to understand the mechanism byassessing the pattern and mechanism of missingness to select the most appropriate handling method (Little & Rubin, 2020). We then need to consider the impact, evaluating how missing data might affect the analysis and interpret the results with caution, acknowledging the potential for bias. While advanced imputation methods can be powerful, they require expertise and understanding of the assumptions involved. Always validate the imputation model and check the plausibility of the imputed values. Document the extent of missing data, the chosen handling methods, and the rationale behind these choices. Transparency in how missing data was addressed is crucial for the credibility of the analysis.
+
+Missing data is an unavoidable aspect of most data collection efforts, posing challenges to achieving accurate and reliable analysis results. By understanding the types of missing data, employing appropriate strategies to address it, and adhering to best practices in data analysis, researchers and analysts can mitigate the negative impacts of missing data. Through careful planning, sophisticated analytical techniques, and transparent reporting, it is possible to draw meaningful conclusions even in the presence of incomplete data.
+
+## References
+
+Rubin, D. B. (1987). Multiple Imputation for Nonresponse in Surveys. John Wiley & Sons.
+
+Rubin, D. B. (2020). Statistical Analysis with Missing Data (3rd ed.). John Wiley & Sons.
